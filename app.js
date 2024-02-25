@@ -172,7 +172,7 @@ app.post("/todos/", async (request, response) => {
       const createNewTodoQuery = `INSERT INTO 
             todo(id,todo,priority,status,category,due_date) 
             VALUES (${id},'${todo}','${priority}','${status}','${category}'
-            ,'${dueDate}');`;
+            ,'${neededFormatDate}');`;
       await db.run(createNewTodoQuery);
       response.send("Todo Successfully Added");
     } catch (error) {
